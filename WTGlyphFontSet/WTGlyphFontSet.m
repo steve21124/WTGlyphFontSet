@@ -451,30 +451,37 @@ static UIColor *gColor;
             UIImage *i = [imageCache objectForKey:key];
             if (i){
                 [imageSetList addObject:i];
-            }
-            
-            WTGlyphFontSet *fontSet = [WTGlyphFontSet loadFont:fontSetName filename:[fontSetName stringByAppendingPathExtension:@"ttf"]];
-            if (fontSet) {
-                if (fontSize==0.0) fontSize = [fontSet fontSizeFromHeight:height];
-                i = [fontSet imageWithHeight:height name:fontItemName fontSize:fontSize color:color strokeColor:strokeColor strokeWidth:strokeWidth verticalAlignment:verticalAlignment];
-                if (i) {
-                    [imageCache setObject:i forKey:key];
-                    [imageSetList addObject:i];
+            }else{            
+                WTGlyphFontSet *fontSet = [WTGlyphFontSet loadFont:fontSetName filename:[fontSetName stringByAppendingPathExtension:@"ttf"]];
+                if (fontSet) {
+                    if (fontSize==0.0) fontSize = [fontSet fontSizeFromHeight:height];
+                    i = [fontSet imageWithHeight:height name:fontItemName fontSize:fontSize color:color strokeColor:strokeColor strokeWidth:strokeWidth verticalAlignment:verticalAlignment];
+                    if (i) {
+                        [imageCache setObject:i forKey:key];
+                        [imageSetList addObject:i];
+                    }
                 }
-            }            
+            }
         }
         
         if ([imageSetList count]>1) {
             UIImage *first = [imageSetList objectAtIndex:0];
             UIImage *second = [imageSetList objectAtIndex:1];
-			UIImage *third = [imageSetList objectAtIndex:2];
+            UIImage *third = nil;
+            UIImage *fourth = nil;
             //combine images
             UIGraphicsBeginImageContext(first.size);
             
             [first drawAtPoint:CGPointMake(0, 0)];
             [second drawAtPoint:CGPointMake(0, 0)];
-			if (third) [second drawAtPoint:CGPointMake(0, 0)];
-
+			if ([imageSetList count] == 3){
+                third = [imageSetList objectAtIndex:2];
+                [third drawAtPoint:CGPointMake(0, 0)];
+            }
+			if ([imageSetList count] == 4){
+                fourth = [imageSetList objectAtIndex:3];
+                [fourth drawAtPoint:CGPointMake(0, 0)];
+            }
             UIImage* result = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();
             if (result) {
