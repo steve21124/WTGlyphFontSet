@@ -467,11 +467,13 @@ static UIColor *gColor;
         if ([imageSetList count]>1) {
             UIImage *first = [imageSetList objectAtIndex:0];
             UIImage *second = [imageSetList objectAtIndex:1];
+			UIImage *third = [imageSetList objectAtIndex:2];
             //combine images
             UIGraphicsBeginImageContext(first.size);
             
             [first drawAtPoint:CGPointMake(0, 0)];
             [second drawAtPoint:CGPointMake(0, 0)];
+			if third [second drawAtPoint:CGPointMake(0, 0)];
 
             UIImage* result = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();
