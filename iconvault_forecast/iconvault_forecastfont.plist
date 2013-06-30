@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>night</key>
+        <string>&#xf100;</string>
+        
+        <key>sunny</key>
+        <string>&#xf101;</string>
+        
+        <key>frosty</key>
+        <string>&#xf102;</string>
+        
+        <key>windysnow</key>
+        <string>&#xf103;</string>
+        
+        <key>showers</key>
+        <string>&#xf104;</string>
+        
+        <key>basecloud</key>
+        <string>&#xf105;</string>
+        
+        <key>cloud</key>
+        <string>&#xf106;</string>
+        
+        <key>rainy</key>
+        <string>&#xf107;</string>
+        
+        <key>mist</key>
+        <string>&#xf108;</string>
+        
+        <key>windysnowcloud</key>
+        <string>&#xf109;</string>
+        
+        <key>drizzle</key>
+        <string>&#xf10a;</string>
+        
+        <key>snowy</key>
+        <string>&#xf10b;</string>
+        
+        <key>sleet</key>
+        <string>&#xf10c;</string>
+        
+        <key>moon</key>
+        <string>&#xf10d;</string>
+        
+        <key>windyrain</key>
+        <string>&#xf10e;</string>
+        
+        <key>hail</key>
+        <string>&#xf10f;</string>
+        
+        <key>sunset</key>
+        <string>&#xf110;</string>
+        
+        <key>windyraincloud</key>
+        <string>&#xf111;</string>
+        
+        <key>sunrise</key>
+        <string>&#xf112;</string>
+        
+        <key>sun</key>
+        <string>&#xf113;</string>
+        
+        <key>thunder</key>
+        <string>&#xf114;</string>
+        
+        <key>windy</key>
+        <string>&#xf115;</string>
+        
+        
+        
+    </dict>
+</plist>
