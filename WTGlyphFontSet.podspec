@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
 
   s.platform      = :ios, '5.0'
   s.requires_arc  = true
-  s.source        = { :git => 'https://github.com/waterlou/WTGlyphFontSet.git', :tag => '0.6' }
+  s.source        = { :git => 'https://github.com/steve21124/WTGlyphFontSet.git' }
   s.default_subspec = 'core'
 
   s.subspec 'core' do |core|
@@ -54,5 +54,7 @@ Pod::Spec.new do |s|
   s.subspec 'condense-c' do |condense|
     condense.resource = 'condense-c/**/*.{ttf,otf,plist}'
   end
-
+  s.subspec 'iconvault_forecast' do |condense|
+    iconvault_forecast.resource = 'iconvault_forecast/**/*.{ttf,otf,plist}'
+  end
 end
