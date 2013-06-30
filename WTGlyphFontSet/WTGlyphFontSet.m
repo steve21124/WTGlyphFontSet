@@ -457,8 +457,10 @@ static UIColor *gColor;
             if (fontSet) {
                 if (fontSize==0.0) fontSize = [fontSet fontSizeFromHeight:height];
                 i = [fontSet imageWithHeight:height name:fontItemName fontSize:fontSize color:color strokeColor:strokeColor strokeWidth:strokeWidth verticalAlignment:verticalAlignment];
-                if (i) [imageCache setObject:i forKey:key];
-                [imageSetList addObject:i];
+                if (i) {
+                    [imageCache setObject:i forKey:key];
+                    [imageSetList addObject:i];
+                }
             }            
         }
         
