@@ -473,7 +473,7 @@ static UIColor *gColor;
             
             [first drawAtPoint:CGPointMake(0, 0)];
             [second drawAtPoint:CGPointMake(0, 0)];
-			if third [second drawAtPoint:CGPointMake(0, 0)];
+			if (third) [second drawAtPoint:CGPointMake(0, 0)];
 
             UIImage* result = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();
