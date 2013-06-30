@@ -226,8 +226,23 @@ static NSMutableDictionary *glyphFonts = nil;
 
 - (UIImage*) image:(CGSize)size name:(NSString*)name color:(UIColor*)color
 {
-    return [self image:size name:name color:color
-             alignment:NSTextAlignmentCenter verticalAlignment:NSVerticalTextAlignmentCenter];
+    //check if multiple overlay image
+    if ([name rangeOfString:@"|"].location == NSNotFound ) {
+        return [self image:size name:name color:color
+                 alignment:NSTextAlignmentCenter verticalAlignment:NSVerticalTextAlignmentCenter];
+    }else{
+        //multiple font overlay found
+        static NSCache *imageCache;
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            imageCache = [[NSCache alloc] init];
+        });
+        // create key from caching
+       // NSString *key = [NSString stringWithFormat:@"%@:%@:%@:%f:%@:%@:%f:%d:%d", fontSetName, name, NSStringFromCGSize(size), fontSize, color, strokeColor, strokeWidth, alignment, verticalAlignment];
+        
+        
+    }
+
 }
 
 - (UIImage*) image:(CGSize)size name:(NSString*)name color:(UIColor*)color
@@ -380,23 +395,92 @@ static UIColor *gColor;
         imageCache = [[NSCache alloc] init];
     });
 
-    NSString *fontSetName = [WTGlyphFontSet parseFontName:&name];
-    if (fontSetName==nil) return nil;
     
-    // create key from caching
-    NSString *key = [NSString stringWithFormat:@"%@:%@:%f:%f:%@:%@:%f:%d", fontSetName, name, height, fontSize, color, strokeColor, strokeWidth, verticalAlignment];
-    //NSLog(@"key %@", key);
-    
-    UIImage *i = [imageCache objectForKey:key];
-    if (i) return i;
-    
-    WTGlyphFontSet *fontSet = [WTGlyphFontSet loadFont:fontSetName filename:[fontSetName stringByAppendingPathExtension:@"ttf"]];
-    if (fontSet) {
-        if (fontSize==0.0) fontSize = [fontSet fontSizeFromHeight:height];
-        i = [fontSet imageWithHeight:height name:name fontSize:fontSize color:color strokeColor:strokeColor strokeWidth:strokeWidth verticalAlignment:verticalAlignment];
-        if (i) [imageCache setObject:i forKey:key];
-        return i;
+    //check if multiple overlay image
+    if ([name rangeOfString:@"|"].location == NSNotFound ) {
+        NSString *fontSetName = [WTGlyphFontSet parseFontName:&name];
+        if (fontSetName==nil) return nil;
+        
+        // create key from caching
+        NSString *key = [NSString stringWithFormat:@"%@:%@:%f:%f:%@:%@:%f:%d", fontSetName, name, height, fontSize, color, strokeColor, strokeWidth, verticalAlignment];
+        //NSLog(@"key %@", key);
+        
+        UIImage *i = [imageCache objectForKey:key];
+        if (i) return i;
+        
+        WTGlyphFontSet *fontSet = [WTGlyphFontSet loadFont:fontSetName filename:[fontSetName stringByAppendingPathExtension:@"ttf"]];
+        if (fontSet) {
+            if (fontSize==0.0) fontSize = [fontSet fontSizeFromHeight:height];
+            i = [fontSet imageWithHeight:height name:name fontSize:fontSize color:color strokeColor:strokeColor strokeWidth:strokeWidth verticalAlignment:verticalAlignment];
+            if (i) [imageCache setObject:i forKey:key];
+            return i;
+        }
+        
+    }else{
+        //multiple overlay use
+        verticalAlignment = NSVerticalTextAlignmentDefault;
+        
+        //add cache
+        // create key from caching
+        NSString *keyList = [NSString stringWithFormat:@"%@:%f:%f:%@:%@:%f:%d", name, height, fontSize, color, strokeColor, strokeWidth, verticalAlignment];
+        //NSLog(@"key %@", key);
+        
+        UIImage *iList = [imageCache objectForKey:keyList];
+        if (iList) return iList;
+        
+        
+        //multiple images found
+        NSArray *fontSetList = [name componentsSeparatedByString:@"|"];
+        NSMutableArray *imageSetList = [[NSMutableArray alloc] init];
+        for (NSString* fontSetItem in fontSetList){
+            NSString *fontSetName = @"";
+            NSString *fontItemName = @"";
+            NSArray *breakName = [fontSetItem componentsSeparatedByString: @"##"];
+            if (breakName.count==2) {
+                fontSetName = breakName[0];
+                fontItemName = breakName[1];
+            }
+            
+            if (fontSetName==nil) return nil;
+            
+            
+            // create key from caching
+            NSString *key = [NSString stringWithFormat:@"%@:%@:%f:%f:%@:%@:%f:%d", fontSetName, fontItemName, height, fontSize, color, strokeColor, strokeWidth, verticalAlignment];
+            //NSLog(@"key %@", key);
+            
+            UIImage *i = [imageCache objectForKey:key];
+            if (i){
+                [imageSetList addObject:i];
+            }
+            
+            WTGlyphFontSet *fontSet = [WTGlyphFontSet loadFont:fontSetName filename:[fontSetName stringByAppendingPathExtension:@"ttf"]];
+            if (fontSet) {
+                if (fontSize==0.0) fontSize = [fontSet fontSizeFromHeight:height];
+                i = [fontSet imageWithHeight:height name:fontItemName fontSize:fontSize color:color strokeColor:strokeColor strokeWidth:strokeWidth verticalAlignment:verticalAlignment];
+                if (i) [imageCache setObject:i forKey:key];
+                [imageSetList addObject:i];
+            }            
+        }
+        
+        if ([imageSetList count]>1) {
+            UIImage *first = [imageSetList objectAtIndex:0];
+            UIImage *second = [imageSetList objectAtIndex:1];
+            //combine images
+            UIGraphicsBeginImageContext(first.size);
+            
+            [first drawAtPoint:CGPointMake(0, 0)];
+            [second drawAtPoint:CGPointMake(0, 0)];
+
+            UIImage* result = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+            if (result) {
+                [imageCache setObject:result forKey:keyList];
+            }
+            return result;
+        }
+        
     }
+
     return nil;
 }
 
