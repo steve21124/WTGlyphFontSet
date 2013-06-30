@@ -54,7 +54,7 @@ Pod::Spec.new do |s|
   s.subspec 'condense-c' do |condense|
     condense.resource = 'condense-c/**/*.{ttf,otf,plist}'
   end
-  s.subspec 'iconvault_forecast' do |condense|
+  s.subspec 'iconvault_forecast' do |iconvault_forecast|
     iconvault_forecast.resource = 'iconvault_forecast/**/*.{ttf,otf,plist}'
   end
 end
