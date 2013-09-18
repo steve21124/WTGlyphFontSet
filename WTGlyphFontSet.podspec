@@ -18,6 +18,9 @@ Pod::Spec.new do |s|
   s.subspec 'fontawesome' do |fontawesome|
     fontawesome.resource = 'fontawesome/**/*.{ttf,otf,plist}'
   end
+  s.subspec 'fontballet' do |fontballet|
+    fontballet.resource = 'fontballet/**/*.{ttf,otf,plist}'
+  end  
   s.subspec 'iconic_fill' do |iconic_fill|
     iconic_fill.resource = 'iconic/**/iconic_fill.{ttf,otf,plist}'
   end
