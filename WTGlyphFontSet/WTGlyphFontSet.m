@@ -223,7 +223,7 @@ static NSMutableDictionary *glyphFonts = nil;
     CFRelease(line);
     CFRelease(sizedFont);
 }
-
+/*
 - (UIImage*) image:(CGSize)size name:(NSString*)name color:(UIColor*)color
 {
     //check if multiple overlay image
@@ -244,7 +244,7 @@ static NSMutableDictionary *glyphFonts = nil;
     }
 
 }
-
+*/
 - (UIImage*) image:(CGSize)size name:(NSString*)name color:(UIColor*)color
          alignment:(NSTextAlignment) alignment verticalAlignment:(NSVerticalTextAlignment) verticalAlignment
 {
