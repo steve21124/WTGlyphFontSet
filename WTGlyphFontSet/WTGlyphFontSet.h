@@ -60,7 +60,7 @@ typedef NS_ENUM(NSInteger, NSVerticalTextAlignment) {
          alignment:(NSTextAlignment) alignment verticalAlignment:(NSVerticalTextAlignment)verticalAlignment;
 
 // create image from the icon glyph
-- (UIImage*) image:(CGSize)size name:(NSString*)name color:(UIColor*)color;
+//- (UIImage*) image:(CGSize)size name:(NSString*)name color:(UIColor*)color;
 - (UIImage*) image:(CGSize)size name:(NSString*)name color:(UIColor*)color
          alignment:(NSTextAlignment) alignment verticalAlignment:(NSVerticalTextAlignment) verticalAlignment;
 - (UIImage*) image:(CGSize)size name:(NSString*)name fontSize:(CGFloat)fontSize color:(UIColor*)color
