@@ -19,6 +19,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreText/CoreText.h>
+#import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, NSVerticalTextAlignment) {
     NSVerticalTextAlignmentTop              = 0,    // Visually top aligned
