@@ -371,7 +371,77 @@
 		<key>vimeo-square</key><string>&#xf194;</string>
 		<key>try</key><string>&#xf195;</string>
 		<key>plus-square-o</key><string>&#xf196;</string>
+        <key>spaceshuttle</key><string>&#xf197;</string>
+        <key>slack</key><string>&#xf198;</string>
+        <key>envelop-square</key><string>&#xf199;</string>
+        <key>wordpress</key><string>&#xf19a;</string>
+ 		<key>openid</key><string>&#xf19b;</string>
+        <key>university</key><string>&#xf19c;</string>
+        <key>graduationcap</key><string>&#xf19d;</string>
+        <key>yahoo</key><string>&#xf19e;</string>
+        <key>google</key><string>&#xf1a0;</string>
+        <key>reddit</key><string>&#xf1a1;</string>
+        <key>reddit-square</key><string>&#xf1a2;</string>
+        <key>stumbleupon-circle</key><string>&#xf1a3;</string>
+        <key>stumbleupon</key><string>&#xf1a4;</string>
+        <key>delicious</key><string>&#xf1a5;</string>
+        <key>digg</key><string>&#xf1a6;</string>
+        <key>piedpiper</key><string>&#xf1a7;</string>
+        <key>piedpiper-alt</key><string>&#xf1a8;</string>
+        <key>drupal</key><string>&#xf1a9;</string>
+        <key>joomla</key><string>&#xf1aa;</string>
+        <key>language</key><string>&#xf1ab;</string>
+        <key>fax</key><string>&#xf1ac;</string>
+        <key>building</key><string>&#xf1ad;</string>
+        <key>child</key><string>&#xf1ae;</string>
+        <key>paw</key><string>&#xf1b0;</string>
+        <key>spoon</key><string>&#xf1b1;</string>
+        <key>cube</key><string>&#xf1b2;</string>
+        <key>cubes</key><string>&#xf1b3;</string>
+        <key>behance</key><string>&#xf1b4;</string>
+        <key>behance-square</key><string>&#xf1b5;</string>
+        <key>steam</key><string>&#xf1b6;</string>
+        <key>steam-square</key><string>&#xf1b7;</string>
+        <key>recycle</key><string>&#xf1b8;</string>
+        <key>car</key><string>&#xf1b9;</string>
+        <key>taxi</key><string>&#xf1ba;</string>
+        <key>tree</key><string>&#xf1bb;</string>
+        <key>spotify</key><string>&#xf1bc;</string>
+        <key>deviantart</key><string>&#xf1bd;</string>
+        <key>soundcloud</key><string>&#xf1be;</string>
+        <key>database</key><string>&#xf1c0;</string>
+        <key>file-pdf-o</key><string>&#xf1c1;</string>
+        <key>file-word-o</key><string>&#xf1c2;</string>
+        <key>file-excel-o</key><string>&#xf1c3;</string>
+        <key>file-powerpoint-o</key><string>&#xf1c4;</string>
+        <key>file-picture-o</key><string>&#xf1c5;</string>
+        <key>file-zip-o</key><string>&#xf1c6;</string>
+        <key>file-audio-o</key><string>&#xf1c7;</string>
+        <key>file-movie-o</key><string>&#xf1c8;</string>
+        <key>file-code-o</key><string>&#xf1c9;</string>
+        <key>vine</key><string>&#xf1ca;</string>
+        <key>codepen</key><string>&#xf1cb;</string>
+        <key>jsfiddle</key><string>&#xf1cc;</string>
+        <key>lifesaver</key><string>&#xf1cd;</string>
+        <key>circle-o-notch</key><string>&#xf1ce;</string>
+        <key>rebel</key><string>&#xf1d0;</string>
+        <key>empire</key><string>&#xf1d1;</string>
+        <key>git-square</key><string>&#xf1d2;</string>
+        <key>git</key><string>&#xf1d3;</string>
+        <key>hackernews</key><string>&#xf1d4;</string>
+        <key>tencentweibo</key><string>&#xf1d5;</string>
+        <key>qq</key><string>&#xf1d6;</string>
+        <key>wechat</key><string>&#xf1d7;</string>
+        <key>send</key><string>&#xf1d8;</string>
+        <key>send-o</key><string>&#xf1d9;</string>
+        <key>history</key><string>&#xf1da;</string>
+        <key>circle-o</key><string>&#xf1db;</string>
+        <key>header</key><string>&#xf1dc;</string>
+        <key>paragraph</key><string>&#xf1dd;</string>
+        <key>sliders</key><string>&#xf1de;</string>
+        <key>share-alt</key><string>&#xf1e0;</string>
+        <key>share-alt-square</key><string>&#xf1e1;</string>
+        <key>bomb</key><string>&#xf1e2;</string>
 
-        
     </dict>
 </plist>
