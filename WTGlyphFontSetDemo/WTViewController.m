@@ -25,7 +25,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     _fontlist = @[
-    @{@"name": @"Font Awesome 4.1.0", @"file": @"fontawesome.ttf", @"url": @"http://fortawesome.github.com/Font-Awesome/"},
+    @{@"name": @"Font Awesome 3.0", @"file": @"fontawesome.ttf", @"url": @"http://fortawesome.github.com/Font-Awesome/"},
     @{@"name": @"iconic_fill", @"file": @"iconic_fill.ttf", @"url": @"http://somerandomdude.com/work/iconic/"},
     @{@"name": @"iconic_stroke", @"file": @"iconic_stroke.ttf", @"url": @"http://somerandomdude.com/work/iconic/"},
     @{@"name": @"entypo", @"file": @"entypo.ttf", @"url": @"http://www.entypo.com/"},
