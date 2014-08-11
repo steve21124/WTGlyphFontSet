@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
 
   s.platform      = :ios, '5.0'
   s.requires_arc  = true
-  s.source        = { :git => 'https://github.com/steve21124/WTGlyphFontSet.git' }
+  s.source        = { :git => 'https://github.com/khoulaiz/WTGlyphFontSet.git' }
   s.default_subspec = 'core'
 
   s.subspec 'core' do |core|
